@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <h2>Calculo da àrea de um triângulo</h2>
+        <!-- Caixas de Texto para entrada de dados-->
+        <input type="number"  id="base" placeholder="Insira a base">
+        <input type="number"  id="altura" placeholder="Insira a altura">
+
+        <!-- Botões-->
+        <button id="bttCalcular">Calcular</button>
+        <button id="bttLimpar">Limpar</button>
+
+        <!-- Saída do resultado-->
+        <p id="resultado"></p>
+    </div>
+
+    <script>
+        const base = document.getElementById("base");
+        const altura = document.getElementById("altura");
+        const bttcalcular = document.getElementById("bttCalcular");
+        const bttlimpar = document.getElementById("bttLimpar");
+        const resultado = document.getElementById("resultado");
+
+
+        function calcular(){
+            let b = parseFloat(base.value);
+            let a = parseFloat(altura.value);
+            let area = (b*a)/2;
+            resultado.textContent = "A área do triângulo é de "+area;
+        }
+        bttcalcular.addEventListener('click',calcular);
+
+        bttlimpar.addEventListener('click', ()=>{
+            base.value ='';
+            altura.value = '';
+            resultado.textContent='';
+            
+        })
+    </script>
+</body>
+</html>
